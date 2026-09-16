@@ -19,7 +19,7 @@ use Yiisoft\Http\Method;
 
 abstract class BaseMiddlewareTest extends TestCase
 {
-    protected function createHandler(StreamInterface $body = null): RequestHandlerInterface
+    protected function createHandler(?StreamInterface $body = null): RequestHandlerInterface
     {
         return new class($body ?? $this->createStream()) implements RequestHandlerInterface {
             private StreamInterface $body;
@@ -39,7 +39,7 @@ abstract class BaseMiddlewareTest extends TestCase
             }
         };
     }
-    protected function createStream(ConverterMatcherInterface $matcher = null): BucketStream
+    protected function createStream(?ConverterMatcherInterface $matcher = null): BucketStream
     {
         return new BucketStream($matcher ?? new MatcherWithAnyFormatDummyConverter(), new DummyBucket());
     }

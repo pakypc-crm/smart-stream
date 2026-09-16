@@ -11,7 +11,7 @@ final class SimpleMatcherConfig
     /** @var string[][] */
     private array $buckets = [];
 
-    public function withFormat(string $format, string $converter, string $mimeType = null, array $buckets = []): self
+    public function withFormat(string $format, string $converter, ?string $mimeType = null, array $buckets = []): self
     {
         $new = clone $this;
 

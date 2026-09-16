@@ -31,7 +31,7 @@ class SimpleConverterMatcherTest extends TestCase
     {
         return new SimpleMatcherConfig();
     }
-    private function createMatcher(SimpleMatcherConfig $config = null): SimpleConverterMatcher
+    private function createMatcher(?SimpleMatcherConfig $config = null): SimpleConverterMatcher
     {
         return new SimpleConverterMatcher($this->createContainer(), $config ?? $this->createConfig());
     }

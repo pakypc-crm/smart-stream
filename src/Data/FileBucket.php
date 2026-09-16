@@ -25,7 +25,7 @@ class FileBucket extends DataBucket
      * @param null|string $fileName
      * @throws \Exception
      */
-    public function __construct($data, string $contentType = null, string $fileName = null)
+    public function __construct($data, ?string $contentType = null, ?string $fileName = null)
     {
         switch (true) {
             case $data instanceof SplFileInfo:
@@ -54,7 +54,7 @@ class FileBucket extends DataBucket
         }
     }
 
-    public static function createFromPath(string $filePath, string $contentType = null, string $fileName = null): self
+    public static function createFromPath(string $filePath, ?string $contentType = null, ?string $fileName = null): self
     {
         return new static(new SplFileInfo($filePath), $contentType, $fileName);
     }
@@ -80,7 +80,7 @@ class FileBucket extends DataBucket
         return $this->contentDisposition === self::DISPOSITION_INLINE;
     }
 
-    public function withAttachment(string $fileName = null): self
+    public function withAttachment(?string $fileName = null): self
     {
         $new = clone $this;
         $new->setAttachment($fileName);
@@ -92,7 +92,7 @@ class FileBucket extends DataBucket
         $new->setContentType($contentType);
         return $new;
     }
-    public function withInline(string $fileName = null): self
+    public function withInline(?string $fileName = null): self
     {
         $new = clone $this;
         $new->setInline($fileName);

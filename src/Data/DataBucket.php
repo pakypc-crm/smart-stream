@@ -16,7 +16,7 @@ class DataBucket
 
     protected const IS_CONVERTABLE = true;
 
-    public function __construct($data, string $format = null, iterable $params = [])
+    public function __construct($data, ?string $format = null, iterable $params = [])
     {
         $this->data = $data;
         if ($format !== null) {
@@ -74,7 +74,7 @@ class DataBucket
         $new->setHeader($name, $value);
         return $new;
     }
-    public function withFormat(?string $format, array $params = null): self
+    public function withFormat(?string $format, ?array $params = null): self
     {
         $new = clone $this;
         $new->setFormat($format, $params);
