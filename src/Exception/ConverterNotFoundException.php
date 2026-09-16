@@ -10,7 +10,7 @@ use Throwable;
 class ConverterNotFoundException extends RuntimeException
 {
     private ?string $format;
-    public function __construct(?string $format, Throwable $previous = null)
+    public function __construct(?string $format, ?Throwable $previous = null)
     {
         $this->format = $format;
         $format = $format === null ? 'undefined' : "'{$format}'";

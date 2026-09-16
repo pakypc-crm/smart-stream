@@ -168,7 +168,7 @@ final class SmartStreamFactoryTest extends TestCase
         $this->assertInstanceOf(BucketStream::class, $stream2);
     }
 
-    private function createFactory(string $defaultBucketClass = null): SmartStreamFactory
+    private function createFactory(?string $defaultBucketClass = null): SmartStreamFactory
     {
         $params = [
             new Psr17Factory(),

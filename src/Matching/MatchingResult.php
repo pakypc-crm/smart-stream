@@ -12,7 +12,7 @@ final class MatchingResult
     private ConverterInterface $converter;
     private ?string $mimeType = null;
 
-    public function __construct(string $format, ConverterInterface $converter, string $mimeType = null)
+    public function __construct(string $format, ConverterInterface $converter, ?string $mimeType = null)
     {
         $this->format = $format;
         $this->converter = $converter;

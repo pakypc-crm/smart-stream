@@ -11,7 +11,7 @@ class WebTemplateBucket extends DataBucket
     private iterable $layoutData = [];
     private iterable $commonData = [];
 
-    public function __construct(iterable $templateData, string $format = null, array $params = [])
+    public function __construct(iterable $templateData, ?string $format = null, array $params = [])
     {
         parent::__construct($templateData, $format, $params);
     }
